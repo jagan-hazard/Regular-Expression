@@ -41,9 +41,40 @@
 		abc{2}		-> match string 'ab' followed by two 'c'
 		abc{2,}		-> match string 'ab' followed by atleast two or more 'c'
 		abc{2,5}	-> match string 'ab' followed by two to five 'c'
+		a(bc)*		-> match string 'a' followed by zero or more copies of sequence 'bc'
+		a(bc){2,5}	-> match string 'a' followed by two to five copies of sequence 'bc'
 
-	2.4. 
 
+	2.4. Operator:
+	--------------
+
+		a(b|c)      -> 'a' followed by 'b' or 'c'
+		a[b|c]		-> 'a' followed by 'b' or 'c'
+
+	2.5. special charecters:
+	------------------------
+		In general. if you use backslash '\' before any charecter, then this will remove the property of special charecter.
+
+		\n          -> looks for a newline   
+		\t          -> looks for a tab
+		\b          -> matches word boundary (skip whitespaces)
+		\B          -> matches no word boundary 
+		\d          -> matches a single charecter that is a digit
+		\w          -> matches any alphaneumeric/word charecter (i.e. [a-zA-Z0-9])
+		\W          -> matches any non-word charecter (i.e. [^a-zA-Z0-9])
+		\d          -> matches any digit  (i.e. [0-9])
+		\D          -> matches any non-digit  (i.e. [^0-9])
+		\s          -> matches whitespace charecters
+		\S          -> matches non-whitespace charecters
+		\.          -> looks for '.'
+
+	2.6. Alternative and parenthesis:
+	---------------------------------
+
+		jelly|cream   	-> jelly or cream
+		(eg|le)gs	  	-> eggs or legs
+		(da)+			->da or dada or dadada ......
+		
 
 
 
